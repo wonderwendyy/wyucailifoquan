@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蔡李佛拳与侨乡文创 | 五邑大学外国语学院团队</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Microsoft YaHei', sans-serif;
+}
+body {
+background-color: #f9f9f9;
+color: #333;
+line-height: 1.6;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+/* 导航栏 */
+header {
+background-color: #fff;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+position: sticky;
+top: 0;
+z-index: 100;
+}
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 0;
+}
+.logo {
+font-size: 24px;
+font-weight: bold;
+color: #d4af37;
+}
+.logo span {
+color: #8b0000;
+}
+.nav-links {
+display: flex;
+list-style: none;
+}
+.nav-links li {
+margin-left: 30px;
+}
+.nav-links a {
+text-decoration: none;
+color: #333;
+font-weight: 500;
+transition: color 0.3s;
+}
+.nav-links a:hover {
+color: #d4af37;
+}
+/* 英雄区域 */
+.hero {
+height: 80vh;
+min-height: 600px;
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+url('https://via.placeholder.com/1920x1080/333/cccccc?text=蔡李佛拳+侨乡文化') center/cover no-repeat;
+display: flex;
+align-items: center;
+text-align: center;
+color: white;
+}
+.hero-content {
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+}
+.hero h1 {
+font-size: 48px;
+margin-bottom: 20px;
+}
+.hero p {
+font-size: 20px;
+margin-bottom: 30px;
+}
+.btn {
+display: inline-block;
+background-color: #d4af37;
+color: white;
+padding: 12px 30px;
+border-radius: 30px;
+text-decoration: none;
+font-weight: bold;
+transition: background-color 0.3s;
+}
+.btn:hover {
+background-color: #b38f2a;
+}
+/* 内容区块 */
+.section {
+padding: 80px 0;
+}
+.section-title {
+text-align: center;
+margin-bottom: 50px;
+font-size: 36px;
+color: #8b0000;
+}
+.about-content {
+display: flex;
+align-items: center;
+gap: 40px;
+}
+.about-text {
+flex: 1;
+}
+.about-image {
+flex: 1;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+aspect-ratio: 16/9;
+}
+.about-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+/* 文创展品 */
+.products {
+background-color: #f0f0f0;
+}
+.product-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 30px;
+}
+.product-card {
+background-color: white;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s;
+}
+.product-card:hover {
+transform: translateY(-10px);
+}
+.product-image {
+height: 0;
+padding-bottom: 100%; /* 1:1 正方形比例 */
+position: relative;
+overflow: hidden;
+}
+.product-image img {
+position: absolute;
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.5s;
+}
+.product-card:hover .product-image img {
+transform: scale(1.1);
+}
+.product-info {
+padding: 20px;
+}
+.product-info h3 {
+margin-bottom: 10px;
+color: #8b0000;
+}
+.non-commercial {
+display: inline-block;
+background-color: #f8f8f8;
+color: #666;
+padding: 3px 8px;
+border-radius: 4px;
+font-size: 12px;
+margin-left: 10px;
+}
+/* 明信片特效 */
+.postcard-caption {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(0,0,0,0.7);
+color: white;
+padding: 10px;
+transform: translateY(100%);
+transition: transform 0.3s;
+}
+.product-card:hover .postcard-caption {
+transform: translateY(0);
+}
+/* 团队介绍 */
+.team-members {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;
+}
+.team-card {
+width: 200px;
+text-align: center;
+}
+.team-image {
+width: 150px;
+height: 150px;
+border-radius: 50%;
+overflow: hidden;
+margin: 0 auto 15px;
+border: 3px solid #d4af37;
+background-color: #f5f5f5;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.team-image i {
+font-size: 50px;
+color: #ccc;
+}
+.advisor-card {
+width: 100%;
+max-width: 400px;
+margin: 30px auto;
+text-align: center;
+}
+/* 页脚 */
+footer {
+background-color: #333;
+color: white;
+padding: 50px 0 20px;
+text-align: center;
+}
+.footer-content {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+margin-bottom: 30px;
+}
+.footer-section {
+flex: 1;
+min-width: 250px;
+margin-bottom: 30px;
+}
+.footer-section h3 {
+margin-bottom: 20px;
+color: #d4af37;
+}
+.social-links a {
+display: inline-block;
+margin: 0 10px;
+color: white;
+font-size: 20px;
+}
+.copyright {
+border-top: 1px solid #555;
+padding-top: 20px;
+}
+/* 响应式设计 */
+@media (max-width: 768px) {
+.about-content {
+flex-direction: column;
+}
+.nav-links {
+display: none;
+}
+.hero h1 {
+font-size: 36px;
+}
+.hero {
+min-height: 500px;
+}
+.team-card {
+width: 150px;
+}
+.team-image {
+width: 120px;
+height: 120px;
+}
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- 导航栏 -->
+<header>
+<div class="container">
+<nav>
+<div class="logo">蔡李佛拳<span>侨乡文创</span></div>
+<ul class="nav-links">
+<li><a href="#about">拳法介绍</a></li>
+<li><a href="#culture">侨乡文化</a></li>
+<li><a href="#products">文创展品</a></li>
+<li><a href="#team">我们的团队</a></li>
+<li><a href="#contact">联系我们</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- 英雄区域 -->
+<section class="hero">
+<div class="hero-content">
+<h1>传承非遗武术，创新侨乡文化</h1>
+<p>五邑大学外国语学院团队探索传统武术与现代文创的融合</p>
+<a href="#about" class="btn">了解更多</a>
+</div>
+</section>
+<!-- 关于蔡李佛拳 -->
+<section id="about" class="section">
+<div class="container">
+<h2 class="section-title">蔡李佛拳</h2>
+<div class="about-content">
+<div class="about-text">
+<p>蔡李佛拳是广东侨乡地区独特的传统武术流派，融合了南拳的刚猛与侨乡文化的包容性，已有百年历史。其特点是动作简洁有力，攻防兼备，注重实用性与养生价值的结合。
+<p>蔡李佛拳由广东江门新会人陈享于清道光十六年（1836 年）创立。陈享自幼热爱武术，7 岁开始向同村族叔陈远赴学习，后跟随不同师傅学习蔡家拳、李家拳与佛家拳，经过长期练习与研究，融会三家拳法精华，创编出蔡李佛拳。1836 年陈享在京梅 “缘福陈公祠” 设立 “洪圣馆” 传授武学，1845 年设立 “洪圣总馆” 和 “祖师堂”，并派弟子在新会县各乡镇及两广各地开设分馆，使蔡李佛拳成为晚清及民国时期重要的民间武术组织。</p>
+<p>太平天国运动期间，陈享曾协助训练起义军将士。后来，蔡李佛拳经历了辛亥革命、抗日战争等历史时期，鸿胜馆等组织积极参与革命和抗日活动。新中国成立初期，蔡李佛拳的传承受到一定限制，后逐渐恢复和发展，如今已在国内外广泛传播。</p>
+<p>作为非物质文化遗产，蔡李佛拳不仅是一种武术技艺，更是侨乡人民坚韧不拔、开拓进取精神的体现。我们团队从跨文化视角出发，探索这一传统文化的现代传播方式。</p>
+<p>本项目是五邑大学外国语学院的文化创新实践项目，旨在通过多语言传播和文化创意设计，推动传统武术的当代传承。</p>
+</div>
+<div class="about-image">
+<!-- 替换为实际图片（建议尺寸：1600×900） -->
+<img src="https://bkimg.cdn.bcebos.com/pic/9f510fb30f2442a7d933f4ff4212ba4bd11373f0a412?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080"1080/1600x900/333/cccccc?text=蔡佛李拳演示" alt="蔡佛李拳演示">
+</div>
+</div>
+</div>
+</section>
+<!-- 侨乡文化 -->
+<section id="culture" class="section">
+<div class="container">
+<h2 class="section-title">侨乡文化</h2>
+<div class="about-content">
+<div class="about-image">
+<!-- 替换为实际图片（建议尺寸：1600×900） -->
+<img src="https://ts1.tc.mm.bing.net/th/id/R-C.cd991e4424f22a23b423a690541a5b64?rik=O8fmuHUbRu1I8w&riu=http%3a%2f%2fwww.jiangmen.gov.cn%2fimg%2f0%2f191%2f191966%2f2037901.jpg&ehk=YOn4%2f82xgWQfI1C8eCmgxKHFYSwSL3NeJDc8YK7cBCw%3d&risl=&pid=ImgRaw&r=0/1600x900/333/cccccc?text=侨乡文化" alt="侨乡文化">
+</div>
+<div class="about-text">
+<p>五邑地区是中国著名的侨乡，数百年来，无数五邑人远渡重洋，在世界各地打拼，形成了独特的侨乡文化。这种文化既有中国传统文化的根基，又融入了海外多元文化的元素。</p>
+<p>蔡李佛拳正是在这样的文化背景下孕育而生的。它既有中国传统武术的精髓，又吸收了海外搏击技术的一些特点，体现了侨乡文化"海纳百川"的特质。</p>
+<p>我们团队发挥外语专业优势，通过多语言资料整理、跨文化传播策略和文化创意设计，探索侨乡武术文化的国际化表达方式。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 文创展品 -->
+<section id="products" class="section products">
+<div class="container">
+<h2 class="section-title">文创展品 <span class="non-commercial">文化展示计划</span></h2>
+<p style="text-align: center; margin-bottom: 30px;">以下是我们设计的文化创意展示方案，旨在探索传统武术的现代表达</p>
+<div class="product-grid">
+<!-- 明信片套装 -->
+<!-- 替换为实际图片（建议尺寸：800×800） -->
+</div>
+</div>
+<div class="product-info">
+<h3>侨乡武术明信片 <span class="non-commercial">展示方案</span></h3>
+<p>精选经典招式，与各种现代武术对照，结合艺术特色风格，采用双语对照设计，展现武术与文化的融合。</p>
+</div>
+</div>
+<!-- 视觉设计 -->
+<!-- 替换为实际图片（建议尺寸：800×800） -->
+</div>
+<div class="product-info">
+<h3>武术主题视觉设计 <span class="non-commercial">展示方案</span></h3>
+<p>将蔡李佛拳经典招式转化为现代平面设计语言，探索传统武术的视觉符号创新。</p>
+</div>
+</div>
+<!-- 数字展馆 -->
+<!-- 替换为实际图片（建议尺寸：800×800） -->
+</div>
+<div class="product-info">
+<h3>武术文化数字展馆 <span class="non-commercial">展示方案</span></h3>
+<p>虚拟现实展示方案，通过3D技术呈现蔡李佛拳的动作分解和侨乡文化场景。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 团队介绍 -->
+<section id="team" class="section">
+<div class="container">
+<h2 class="section-title">我们的团队</h2>
+<p style="text-align: center; margin-bottom: 40px;">来自五邑大学外国语学院的文化创新团队</p>
+<div class="team-members">
+<div class="team-card">
+<div class="team-image">
+<!-- 替换为实际成员照片（建议尺寸：400×400） -->
+<i class="fas fa-user"></i>
+</div>
+<h3>朱柳盈</h3>
+<p>项目协调</p>
+</div>
+<div class="team-card">
+<div class="team-image">
+<i class="fas fa-user"></i>
+</div>
+<h3>张晓灵</h3>
+<p>资料翻译</p>
+</div>
+<div class="team-card">
+<div class="team-image">
+<i class="fas fa-user"></i>
+</div>
+<h3>叶海连</h3>
+<p>文化研究</p>
+</div>
+<div class="team-card">
+<div class="team-image">
+<i class="fas fa-user"></i>
+</div>
+<h3>梁诗妍</h3>
+<p>视觉设计</p>
+</div>
+<div class="team-card">
+<div class="team-image">
+<i class="fas fa-user"></i>
+</div>
+<h3>胡嫣然</h3>
+<p>新媒体运营</p>
+</div>
+</div>
+<div class="advisor-card">
+<div class="team-image" style="width: 150px; height: 150px; margin: 0 auto 20px;">
+<i class="fas fa-user-tie"></i>
+</div>
+<h3>廖环</h3>
+<p>指导老师</p>
+</div>
+</div>
+</section>
+<!-- 联系我们 -->
+<section id="contact" class="section">
+<div class="container">
+<h2 class="section-title">联系我们</h2>
+<div style="text-align: center; max-width: 600px; margin: 0 auto;">
+<p>如果您对我们的文化创新项目感兴趣，或想了解更多关于蔡李佛拳和侨乡文化的内容，欢迎联系我们。</p>
+<p style="margin: 20px 0;"><strong>邮箱：</strong>wonderwendyy@outlook.com</p>
+<p style="margin: 20px 0;"><strong>地址：</strong>广东省江门市五邑大学外国语学院</p>
+<a href="mailto:wonderwendyy@outlook.com" class="btn">发送邮件</a>
+</div>
+</div>
+</section>
+<!-- 页脚 -->
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h3>关于我们</h3>
+<p>五邑大学外国语学院文化创新团队，致力于探索传统武术文化的现代表达和国际传播。</p>
+</div>
+<div class="footer-section">
+<h3>快速链接</h3>
+<ul style="list-style: none;">
+<li><a href="#about" style="color: white; text-decoration: none;">拳法介绍</a></li>
+<li><a href="#culture" style="color: white; text-decoration: none;">侨乡文化</a></li>
+<li><a href="#products" style="color: white; text-decoration: none;">文创展品</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>关注我们</h3>
+<div class="social-links">
+<a href="#"><i class="fab fa-weixin"></i></a>
+<a href="#"><i class="fab fa-weibo"></i></a>
+<a href="#"><i class="fab fa-douyin"></i></a>
+</div>
+</div>
+</div>
+<div class="copyright">
+<p>&copy; 2025 五邑大学外国语学院蔡李佛拳文化创新团队. 保留所有权利.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
